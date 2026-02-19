@@ -1,0 +1,8 @@
+[project]
+name = "cinema-platform-api"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.14"
+dependencies = [
+    "mypy==1.19.1",
+]
