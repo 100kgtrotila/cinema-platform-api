@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, AwareDatetime
 
 from src.common.schemas import ORMBaseSchema
 
-#CUSTOME UUIDS
+#CUSTOM UUIDS
 MovieId = NewType("MovieId", UUID)
 GenreId = NewType("GenreId", UUID)
 HallId = NewType("HallId", UUID)
@@ -89,8 +89,7 @@ class HallResponse(HallBase, ORMBaseSchema):
     id: HallId
 
 
-
-# Sessions
+# SESSIONS
 class SessionBase(BaseModel):
     start_time: AwareDatetime
     end_time: AwareDatetime
@@ -112,8 +111,6 @@ class SessionUpdate(BaseModel):
 
 class SessionResponse(SessionBase, ORMBaseSchema):
     id: SessionId
-
-
 
 
 # TECHNOLOGIES
@@ -157,9 +154,7 @@ class SeatResponse(SeatBase, ORMBaseSchema):
     id: SeatId
 
 
-
 # SEAT TYPES
-
 class SeatTypeBase(BaseModel):
     name: str = Field(..., min_length=3, max_length=64, description="Seat Type name")
     description: str = Field(..., min_length=3, max_length=64, description="Seat Type type")
