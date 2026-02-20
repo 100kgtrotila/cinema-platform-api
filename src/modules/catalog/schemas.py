@@ -4,6 +4,7 @@ from uuid import UUID
 from pydantic import BaseModel, Field, AwareDatetime
 
 from src.common.schemas import ORMBaseSchema
+from src.modules.catalog.enums import MovieStatus
 
 #CUSTOM UUIDS
 MovieId = NewType("MovieId", UUID)
@@ -28,7 +29,7 @@ class MovieBase(BaseModel):
     release_year: int = Field(..., gt=0)
     cast: list[str]
     is_deleted: bool = Field(default=False)
-    status: MovieStatus = Field(default=MovieStatus.DRAFT)
+    status: MovieStatus = Field(default=MovieStatus.COMING_SOON)
     slug: str | None = Field(default=None, min_length=1, max_length=32)
 
 class MovieCreate(MovieBase):
