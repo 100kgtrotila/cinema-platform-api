@@ -12,3 +12,8 @@ class SessionStatus(str, enum.Enum):
     IN_PROGRESS = "in_progress"
     COMPLETED = "completed"
 
+class SeatStatus(str, enum.Enum):
+    FREE = "free"
+    RESERVED = "reserved"
+    BROKEN = "broken"
+
