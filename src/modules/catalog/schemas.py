@@ -4,7 +4,7 @@ from uuid import UUID
 from pydantic import BaseModel, Field, AwareDatetime
 
 from src.common.schemas import ORMBaseSchema
-from src.modules.catalog.enums import MovieStatus, SessionStatus
+from src.modules.catalog.enums import MovieStatus, SessionStatus, SeatStatus
 from src.modules.pricing.schemas import PricingId
 
 #CUSTOM UUIDS
