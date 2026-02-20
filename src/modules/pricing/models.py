@@ -16,7 +16,7 @@ class Pricing(Base):
     session: Mapped[Pricing] = relationship(back_populates="pricing")
 
 class PricingItem(Base):
-    __tablename__ = "pricing_items"
+    __tablename__ = "pricings_items"
 
     price: Mapped[Decimal] = mapped_column(NUMERIC)
     pricing_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("pricing.id"))
@@ -27,4 +27,6 @@ class PricingItem(Base):
 
     pricing: Mapped["Pricing"] = relationship(back_populates="pricing_items")
     seat_type: Mapped["SeatType"] = relationship(back_populates="seat_types")
+
+
 
